@@ -5,7 +5,7 @@ import { setProducts, setProduct, setLoading, setError, productReviewed, resetEr
 export const getProducts = () => async (dispatch) => {
   dispatch(setLoading(true));
   try {
-    const { data } = await axios.get('/api/products');
+    const { data } = await axios.get('https://tech-api-two.vercel.app/api/products');
     console.log(data);
     dispatch(setProducts(data));
   } catch (err) {
@@ -24,7 +24,7 @@ export const getProducts = () => async (dispatch) => {
 export const getProduct = (id) => async (dispatch) => {
   dispatch(setLoading(true));
   try {
-    const { data } = await axios.get(`/api/products/${id}`);
+    const { data } = await axios.get(`https://tech-api-two.vercel.app/api/products/${id}`);
     dispatch(setProduct(data));
   } catch (err) {
     dispatch(
@@ -51,7 +51,7 @@ export const createProductReview = (productId, userId, comment, rating, title) =
         'Content-Type': 'application/json'
       },
     };
-    const {data} = await axios.put(`/api/products/reviews/${productId}`, { comment, userId, rating, title }, config);
+    const {data} = await axios.put(`https://tech-api-two.vercel.app/api/products/reviews/${productId}`, { comment, userId, rating, title }, config);
     dispatch(productReviewed(data));
   } catch (err) {
     dispatch(

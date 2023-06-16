@@ -13,7 +13,7 @@ export const getAllUsers = () => async (dispatch, getState) => {
         'Content-Type': 'application/json'
       },
     }
-    const { data } = await axios.get('/api/users', config);
+    const { data } = await axios.get('https://tech-api-two.vercel.app/api/users', config);
     dispatch(getUsers(data));
   } catch (err) {
     dispatch(
@@ -41,7 +41,7 @@ export const deleteUser = (id) => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.delete(`/api/users/${id}`, config);
+    const { data } = await axios.delete(`https://tech-api-two.vercel.app/api/users/${id}`, config);
     dispatch(userDelete(data));
   } catch (err) {
     dispatch(
@@ -72,7 +72,7 @@ export const getAllOrders = () => async (dispatch, getState) => {
         'Content-Type': 'application/json'
       },
     }
-    const { data } = await axios.get('/api/orders', config);
+    const { data } = await axios.get('https://tech-api-two.vercel.app/api/orders', config);
     dispatch(getOrders(data));
   } catch (err) {
     dispatch(
@@ -100,7 +100,7 @@ export const deleteOrder = (id) => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.delete(`/api/orders/${id}`, config);
+    const { data } = await axios.delete(`https://tech-api-two.vercel.app/api/orders/${id}`, config);
     dispatch(orderDelete(data));
   } catch (err) {
     dispatch(
@@ -128,7 +128,7 @@ export const setDelivedred = (id) => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.put(`/api/orders/${id}`, config);
+    const { data } = await axios.put(`https://tech-api-two.vercel.app/api/orders/${id}`, config);
     dispatch(setDeliveredFlag(data));
   } catch (err) {
     dispatch(
