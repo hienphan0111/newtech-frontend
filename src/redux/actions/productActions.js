@@ -6,7 +6,6 @@ export const getProducts = () => async (dispatch) => {
   dispatch(setLoading(true));
   try {
     const { data } = await axios.get('https://tech-api-two.vercel.app/api/products');
-    console.log(data);
     dispatch(setProducts(data));
   } catch (err) {
     dispatch(

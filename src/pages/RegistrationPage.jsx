@@ -92,7 +92,7 @@ const RegistrationPage = () => {
                   }
                   <Stack spacing='5'>
                     <FormControl>
-                    <TextField type="text" name="name" placeholder="Your name" label="Email" />
+                    <TextField type="text" name="name" placeholder="Your name" label="Name" />
                       <TextField type="text" name="email" placeholder="you@email.com" label="Email" />
                       <PasswordTextField type="password" name="password" placeholder="your password" label="Password" />
                       <PasswordTextField type="password" name="confirmPassword" placeholder="confirm your password" label="Confirm Password" />

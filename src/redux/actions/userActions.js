@@ -10,7 +10,7 @@ export const login = (email, password) => async (dispatch) => {
       },
     };
 
-    const { data } = await axios.post('/api/users/login', { email, password}, config);
+    const { data } = await axios.post('https://tech-api-two.vercel.app/api/users/login', { email, password}, config);
     dispatch(userLogin(data));
   } catch (err) {
     dispatch(
@@ -38,7 +38,7 @@ export const register = (name, email, password) => async (dispatch) => {
       },
     };
 
-    const { data } = await axios.post('/api/users/register', { name, email, password}, config);
+    const { data } = await axios.post('https://tech-api-two.vercel.app/api/users/register', { name, email, password}, config);
     dispatch(userLogin(data));
   } catch (err) {
     dispatch(
@@ -63,7 +63,7 @@ export const updateProfile = (id, name, email, password) => async(dispatch, getS
         'Content-Type': 'application/json'
       },
     };
-    const {data} = await axios.put(`/api/users/profile/${id}`, { _id: id, name, email, password }, config);
+    const {data} = await axios.put(`https://tech-api-two.vercel.app/api/users/profile/${id}`, { _id: id, name, email, password }, config);
     localStorage.setItem('userInfo', JSON.stringify(data));
     dispatch(userUpdateProfile(data));
   } catch (err) {
@@ -93,7 +93,7 @@ export const getUserOrders = () => async (dispatch, getState) => {
         'Content-Type': 'application/json'
       },
     };
-    const { data } = await axios.get(`/api/users/${userInfo._id}`, config);
+    const { data } = await axios.get(`https://tech-api-two.vercel.app/api/users/${userInfo._id}`, config);
     dispatch(setUserOrders(data));
   } catch ( err ) {
     dispatch(
